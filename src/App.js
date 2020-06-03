@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+  let [status, setStatus] = useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <div className="body">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Status : {status ? 'Not Active' : 'Active'}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button 
+          className="button-status"
+          onClick={() => setStatus(!status)}
         >
-          Learn React
-        </a>
-      </header>
+          {status ? 'Turn On' : 'Turn Off'}
+        </button >
+      </div>
     </div>
   );
 }
